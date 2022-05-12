@@ -138,6 +138,8 @@ nav {
 .contacts-list {
   display: flex;
   list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 .contacts-list a {
@@ -146,6 +148,10 @@ nav {
 }
 
 .contacts-link:hover .contacts-icon {
+  fill: var(--accent-color);
+}
+
+.contacts-link:focus .contacts-icon {
   fill: var(--accent-color);
 }
 
@@ -160,7 +166,7 @@ nav {
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url(images/herobackground.jpg);
+    url(/images/herobackground.jpg);
   background-size: cover;
   background-position: center;
   max-width: 1600px;
@@ -231,9 +237,11 @@ nav {
 }
 
 .our-member-links {
+  display: flex;
   list-style-type: none;
-  padding-left: 32px;
-  padding-right: 32px;
+  margin: auto;
+  padding: 0px;
+  justify-content: center;
 }
 
 .our-member-contacts {
@@ -246,9 +254,20 @@ nav {
   height: 44px;
 }
 
-.our-member-links li a {
+.our-member-links .link {
+  display: flex;
+  align-items: center;
   width: 44px;
   height: 44px;
+}
+
+.our-member-links .link:focus {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.link:focus .our-member-links-icon {
+  fill: var(--address-color);
 }
 
 .our-member-links li + li {
@@ -265,12 +284,18 @@ nav {
 }
 
 .our-member-links li svg {
-  fill: var(--primary-text-color);
+  fill: var(--client-company-icon);
   margin: 12px;
 }
 
+.link:focus .our-clients-links-icon {
+  fill: var(--accent-color);
+}
+
 .feature-item-icon {
+  text-align: center;
   margin-bottom: 30px;
+  background-color: var(--logo-down-color);
 }
 
 .feature-item {
@@ -325,18 +350,21 @@ nav {
   line-height: 0px;
 }
 
-/* Our team styles */
+/* "our-team-list"am styles */
 
 .our-team-section {
   padding-top: 94px;
   padding-bottom: 94px;
+
+  background-color: var(--secondary-bg-color);
 }
 
-.our-team {
+.our-team-list {
   display: flex;
   justify-content: space-between;
   margin: 0px;
   padding: 0px;
+  list-style-type: none;
 }
 
 .our-team-name {
@@ -398,12 +426,13 @@ nav {
 }
 
 .our-clients-list {
+  display: flex;
   list-style-type: none;
   padding: 0px;
 }
 
 .our-clients-list li {
-  display: inline-block;
+  display: flex;
   width: 170px;
   height: 92px;
 
@@ -471,13 +500,14 @@ footer .container {
 }
 
 .our-social-links {
+  display: flex;
   list-style-type: none;
   padding: 0px;
   margin: 0px;
 }
 
 .our-social-links li {
-  display: inline-block;
+  display: flex;
   width: 44px;
   height: 44px;
   margin: 0px;
@@ -496,6 +526,15 @@ footer .container {
 
 .our-social-links li:hover {
   background-color: var(--accent-color);
+}
+
+.our-social-links .link:focus {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.link:focus .our-links-icon {
+  fill: var(--address-color);
 }
 
 .join-us {
@@ -559,6 +598,11 @@ footer .container {
   margin-top: 0px;
 
   padding-top: 50px;
+}
+
+.projects li:hover {
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
 .projects li:not(:nth-last-child(-n + 3)) {
